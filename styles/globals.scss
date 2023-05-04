@@ -1,0 +1,80 @@
+$primary-font: “Public Sans”, sans-serif;
+$secondary-font: “Lora”, serif;
+
+$small-screen-breakpoint: 767px;
+$min-screen-width: 375px;
+
+$spacing--xx-small: 0.25rem;
+$spacing--x-small: 0.5rem;
+$spacing--small: 1rem;
+$spacing--smallish: 1.5rem;
+$spacing--medium: 2rem;
+$spacing--large: 3rem;
+$spacing--x-large: 3.5rem;
+$spacing--tap: 3.25rem;
+
+$primary--background: $green--background;
+$primary--light: $green--light;
+$primary--dark: $green--dark;
+$primary--foreground: $green--foreground;
+
+$secondary--background: $purple--background;
+$secondary--light: $purple--light;
+$secondary--dark: $purple--dark;
+$secondary--foreground: $purple--foreground;
+
+html {
+  body {
+    margin: auto;
+    * {
+      box-sizing: border-box;
+    }
+  }
+}
+
+.top-level {
+  // TODO: eventually move into the body tag
+  font-family: $primary-font;
+  overflow: auto;
+  height: 100vh;
+
+  .content-container--double {
+    display: grid;
+    margin: 0 auto;
+    max-width: ($small-screen-breakpoint + 1) * 2;
+    min-width: calc($min-screen-width - calc($spacing--small * 2));
+
+    @media (max-width: $small-screen-breakpoint) {
+      column-gap: 16px;
+      grid-template-areas:
+        "header"
+        "left"
+        "right"
+        "footer";
+      padding: 16px;
+    }
+
+    @media (min-width: ($small-screen-breakpoint + 1)) {
+      column-gap: 32px;
+      grid-template-areas:
+        "header header"
+        "left right"
+        "footer footer";
+      height: 100vh;
+      padding: 32px;
+    }
+  }
+
+  .grid-content--header {
+    grid-area: header;
+  }
+  .grid-content--left {
+    grid-area: left;
+  }
+  .grid-content--right {
+    grid-area: right;
+  }
+  .grid-content--footer {
+    grid-area: footer;
+  }
+}
