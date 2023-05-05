@@ -1,3 +1,7 @@
+//fonts
+$primary-font: "Rubik", sans-serif;
+$secondary-font: "Lora", serif;
+
 $small-screen-breakpoint: 767px;
 $min-screen-width: 375px;
 
@@ -18,6 +22,7 @@ $primary--super-dark: #651a01;
 
 html {
   body {
+    font-family: $primary-font;
     margin: auto;
     * {
       box-sizing: border-box;
@@ -30,7 +35,7 @@ html {
   overflow: auto;
   height: 100vh;
 
-  .content-container--double {
+  .content__container--double {
     display: grid;
     margin: 0 auto;
     max-width: ($small-screen-breakpoint + 1) * 2;
@@ -55,18 +60,23 @@ html {
       height: 100vh;
       padding: 32px;
     }
-  }
 
-  .grid-content--header {
-    grid-area: header;
+    .header__grid-area {
+      grid-area: header;
+    }
+    .left-content__grid-area {
+      grid-area: left;
+    }
+    .right-content__grid-area {
+      grid-area: right;
+    }
+    .footer__grid-area {
+      grid-area: footer;
+    }
   }
-  .grid-content--left {
-    grid-area: left;
-  }
-  .grid-content--right {
-    grid-area: right;
-  }
-  .grid-content--footer {
-    grid-area: footer;
-  }
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
 }
