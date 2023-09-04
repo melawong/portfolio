@@ -7,6 +7,9 @@ export default function HamburgerMenu() {
       <div>
         <Link href="/portfolio">Portfolio</Link>
         <Link href="/contact">Contact</Link>
+        <Link href="/resume.pdf" target="_blank">
+          Resume
+        </Link>
         <Link href="/">Home</Link>
       </div>
     </div>
