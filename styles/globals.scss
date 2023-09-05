@@ -15,65 +15,49 @@ $spacing--x-large: 3.5rem;
 $spacing--tap: 3.25rem;
 
 $primary--background: #ffdb70;
-$primary--light: #ffdb70;
+$primary--light: #f9fad1;
 $primary--dark: #fb8d0e;
 $primary--foreground: #b84600;
 $primary--super-dark: #651a01;
 
+// #ee6802
+// #ff9b21
+// #fecf50
+// #f9fad1
+// #aac3bd
+
+$background-gradient: linear-gradient(
+  180deg,
+  #fcd64f 0%,
+  rgba(189.13, 85.23, 26.79, 0.99) 100%
+);
+
 html {
   body {
+    background: $background-gradient;
     font-family: $primary-font;
-    margin: auto;
-    * {
-      box-sizing: border-box;
-    }
   }
+}
+.home__container--buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+button {
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  width: 100px;
+  height: 30px;
+  background-color: #aac3bd;
+  color: $primary--light;
 }
 
 .top-level {
-  // TODO: eventually move into the body tag
   overflow: auto;
   height: 100vh;
-
-  .content__container--double {
-    display: grid;
-    margin: 0 auto;
-    max-width: ($small-screen-breakpoint + 1) * 2;
-    min-width: calc($min-screen-width - calc($spacing--small * 2));
-
-    @media (max-width: $small-screen-breakpoint) {
-      column-gap: 16px;
-      grid-template-areas:
-        "header"
-        "left"
-        "right"
-        "footer";
-      padding: 16px;
-    }
-
-    @media (min-width: ($small-screen-breakpoint + 1)) {
-      column-gap: 32px;
-      grid-template-areas:
-        "header header"
-        "left right"
-        "footer footer";
-      height: 100vh;
-      padding: 32px;
-    }
-
-    .header__grid-area {
-      grid-area: header;
-    }
-    .left-content__grid-area {
-      grid-area: left;
-    }
-    .right-content__grid-area {
-      grid-area: right;
-    }
-    .footer__grid-area {
-      grid-area: footer;
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__container {
@@ -88,4 +72,59 @@ html {
   left: 0;
   position: absolute;
   background: white;
+}
+
+.content--centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.title--homepage {
+  color: purple;
+  font-size: 3rem;
+  z-index: 1;
+}
+
+.homebox {
+  background-color: white;
+  border-radius: 52px;
+  max-width: 768px;
+  max-height: 500px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+@keyframes shimmer {
+  0% {
+    color: rgba(255, 255, 255, 0.1); /* Start with nearly transparent white */
+  }
+  100% {
+    background: linear-gradient(to right, transparent 50%);
+  }
+}
+
+.shimmer {
+  animation: shimmer 3s 1 linear;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0); /* Start and end with no vertical movement */
+  }
+  50% {
+    transform: translateY(-20px); /* Bounce the text upward */
+  }
+}
+
+/* Apply both animations to the h1 element */
+.shimmer-bounce {
+  animation: shimmer 4s alternate linear infinite,
+    bounce 2s ease-in-out infinite; /* Adjust animation durations and properties as needed */
 }
