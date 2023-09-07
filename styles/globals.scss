@@ -62,7 +62,14 @@ button {
 
 .header__container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+}
+
+.header__main {
+  position: absolute;
+  top: 0;
+  padding: 8px;
 }
 
 #canvas1 {
@@ -90,14 +97,19 @@ button {
 .homebox {
   background-color: white;
   border-radius: 52px;
-  max-width: 768px;
-  max-height: 500px;
   min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 16px;
+
+  @media (max-width: $small-screen-breakpoint) {
+    width: 304px;
+  }
+  @media (min-width: ($small-screen-breakpoint + 1)) {
+    width: 550px;
+  }
 }
 
 @keyframes shimmer {

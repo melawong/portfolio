@@ -4,9 +4,11 @@ import HamburgerMenu from "./HamburgerMenu";
 
 export default function Header() {
   return (
-    <div className="header__container header__grid-area">
-      <Logo />
-      <HamburgerMenu />
+    <div className="header__main">
+      <div className="header__container">
+        <Logo />
+        <HamburgerMenu />
+      </div>
     </div>
   );
 }
