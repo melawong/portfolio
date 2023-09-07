@@ -3,10 +3,11 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="top-level">
-      <div className="content__container--double">
+    <>
+      <div className="top-level">
         <Header />
+        <div className="homebox"></div>
       </div>
-    </div>
+    </>
   );
 }

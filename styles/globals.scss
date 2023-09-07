@@ -14,17 +14,12 @@ $spacing--large: 3rem;
 $spacing--x-large: 3.5rem;
 $spacing--tap: 3.25rem;
 
-$primary--background: #ffdb70;
+$primary--background: #fecf50;
 $primary--light: #f9fad1;
-$primary--dark: #fb8d0e;
-$primary--foreground: #b84600;
+$primary--dark: #ff9b21;
+$primary--foreground: #ee6802;
 $primary--super-dark: #651a01;
-
-// #ee6802
-// #ff9b21
-// #fecf50
-// #f9fad1
-// #aac3bd
+$primary--contrasting: #aac3bd;
 
 $background-gradient: linear-gradient(
   180deg,
@@ -139,4 +134,9 @@ button {
 .shimmer-bounce {
   animation: shimmer 4s alternate linear infinite,
     bounce 2s ease-in-out infinite; /* Adjust animation durations and properties as needed */
+}
+
+.logo {
+  text-decoration: none;
+  color: ;
 }
