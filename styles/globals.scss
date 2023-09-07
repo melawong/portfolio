@@ -137,6 +137,8 @@ button {
 }
 
 .logo {
-  text-decoration: none;
-  color: ;
+  text-decoration: underline dotted;
+  color: $primary--super-dark;
+  text-decoration-color: white;
+  text-decoration-thickness: 20%;
 }
