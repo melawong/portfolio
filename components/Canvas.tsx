@@ -5,10 +5,10 @@ export default function Canvas(props: any) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas: any = canvasRef.current;
     const context = canvas.getContext("2d");
     let frameCount = 0;
-    let animationFrameId;
+    let animationFrameId: any;
 
     const render = () => {
       frameCount++;
